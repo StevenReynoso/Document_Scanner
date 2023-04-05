@@ -104,11 +104,11 @@ Mat getWarp(Mat img, vector<Point> points, float w, float h) {	// imgOriginal an
 
 int main() {
 	
-	/*string path = "Resources/paper.jpg";		//// changing the image will scan your document
-	imgOriginal = imread(path);*/
+	string path = "Resources/paper.jpg";		//// changing the image will scan your document
+	imgOriginal = imread(path);
 
 
-	//resize(imgOriginal, imgOriginal, Size(), 0.5, 0.5);
+	resize(imgOriginal, imgOriginal, Size(), 0.5, 0.5);
 
 	//preprocessing
 	imgThresh = preProcessing(imgOriginal);
@@ -130,9 +130,9 @@ int main() {
 	Rect roi(cropVal, cropVal, w - (2 * cropVal), h - (2 * cropVal));
 	imgCrop = imgWarp(roi);
 
-	/*imshow("Image Original", imgOriginal);
+	imshow("Image Original", imgOriginal);
 	imshow("Image Dilation", imgThresh);
-	imshow("Image Warp", imgWarp);*/
+	imshow("Image Warp", imgWarp);
 	imshow("Image Crop", imgCrop);
 	waitKey(0);
 
